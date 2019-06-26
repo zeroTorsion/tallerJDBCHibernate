@@ -62,12 +62,19 @@ public class JDBCApplication {
 		    PreparedStatement preparedStatement=connection.prepareStatement(sql);
 		    preparedStatement.setString(1, "David");*/
 		    //String sql2 = "INSERT INTO pets (id, birth_date, type_id, owner_id)"+"VALUES('14','Nacho','2002-07-29','6','11')";
-			String sql1="UPDATE owners"+"SET city=Sevilla"+"where first_name=Pablo ";
+			String sql1="UPDATE owners SET city=Sevilla where first_name=Pablo ";
 		
 		    ResultSet stateSql1 = statement.executeQuery(sql1);
 		    stateSql1.close();
 		    
 		    String duenoBuscado = "George Lujan";
+		    /*separar el string
+		     *hacer dos consultas sql
+		     *	 una buscando la igualdad en el nombre, devuelve bool
+		     * 	 otra buscando la igualdad en el apellido, devuelve bool
+		     * 	 hacer un or de los resultados
+		     * 	 profit?
+		     * */
 		    
 
 			Owner nuevoDueno=new Owner();
@@ -90,6 +97,12 @@ public class JDBCApplication {
 			preparedStatement.setString(3,direccion);
 			preparedStatement.setString(4,ciudad);
 			preparedStatement.setString(5,telefono);
+			
+			/* crear mascota tal como se hizo con owner
+			 * asignar mascota a owner con get pet
+			 * hacer consulta sql delete
+
+			 * */
 		    System.out.println("Éxito");
 		    
 		    
